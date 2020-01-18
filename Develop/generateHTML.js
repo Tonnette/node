@@ -30,11 +30,13 @@ function generateHTML(data) {
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
+      <title>PDF Exercise</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
       <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
-      <title>Document</title>
+      </head>
+      
       <style>
           @page {
             margin: 0;
@@ -170,7 +172,33 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`
+      </style>
+      <body>
+     
+      <img src="${data.avatar_url};"  alt="profile pic">
+    
+
+      <h1>Username: Hi! My name is ${data.login};
+      </h1>
+      <h2>I live in ${data.location};
+      </h2>
+      <h2>My Github profile is ${data.url};
+      </h2>
+      <h2>My User blog is ${data.blog};
+      </h2>
+      <h3>My User bio is ${data.bio};
+      </h3>
+      <h3>My number of public repos are ${data.public_repos};
+      </h3>
+      <h3>My number of followers are ${data.followers};
+      </h3>
+      <h3>My number of users following at ${data.following};
+      </h3>
+
+
+      
+      
+      </body>`
         }
 
         module.exports = generateHTML;

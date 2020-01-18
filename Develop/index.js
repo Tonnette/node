@@ -5,6 +5,15 @@ const axios = require("axios");
 
 // var indexContent = myHTML.generateHTML();
 
+
+// function writeToFile(fileName, data) {
+
+// }
+
+// function init() {
+
+// init();
+
 const questions = [
     {
         type: "list",
@@ -29,26 +38,29 @@ inquirer
     .prompt(questions)
     .then(({ color, username }) => {
         console.log(color, username)
+
         API.getUsername(username)
-        .then((response)=> {
-            console.log(response.data)
-            console.log(color)
-            return generateHTML({color, ...response.data})
-            
-        })
-        .then((htmlData)=> {
-            console.log(htmlData)
-        })
+            .then((response) => {
+                console.log(response.data)
+                console.log(color)
+                return generateHTML({ color, ...response.data})
+
+            })
+            .then((htmlData) => {
+                console.log(htmlData)
+            })
     });
-    
+
+
+
 
 
 const API = {
     getUsername(userData) {
         const queryUrl = `https://api.github.com/users/${userData}`;
         return axios.get(queryUrl)
-// .catch ()
-        }
+            .catch()
+    }
 
     // getgithubstars(userData){
 
@@ -167,14 +179,4 @@ const API = {
     //     });
     // });
 
-// const questions = [
 
-// ];
-
-// function writeToFile(fileName, data) {
-
-// }
-
-// function init() {
-
-// init();
