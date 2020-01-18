@@ -1,36 +1,31 @@
-  const colors = {
-    green: {
-      wrapperBackground: "#E6E1C3",
-      headerBackground: "#C1C72C",
-      headerColor: "black",
-      photoBorderColor: "#black"
-    },
-    blue: {
-      wrapperBackground: "#5F64D3",
-      headerBackground: "#26175A",
-      headerColor: "white",
-      photoBorderColor: "#73448C"
-    },
-    pink: {
-      wrapperBackground: "#879CDF",
-      headerBackground: "#FF8374",
-      headerColor: "white",
-      photoBorderColor: "#FEE24C"
-    },
-    red: {
-      wrapperBackground: "#DE9967",
-      headerBackground: "#870603",
-      headerColor: "white",
-      photoBorderColor: "white"
-    }
-
+const colors = {
+  green: {
+    wrapperBackground: "#E6E1C3",
+    headerBackground: "#C1C72C",
+    headerColor: "black",
+    photoBorderColor: "#black"
+  },
+  blue: {
+    wrapperBackground: "#5F64D3",
+    headerBackground: "#26175A",
+    headerColor: "white",
+    photoBorderColor: "#73448C"
+  },
+  pink: {
+    wrapperBackground: "#879CDF",
+    headerBackground: "#FF8374",
+    headerColor: "white",
+    photoBorderColor: "#FEE24C"
+  },
+  red: {
+    wrapperBackground: "#DE9967",
+    headerBackground: "#870603",
+    headerColor: "white",
+    photoBorderColor: "white"
   }
+};
 
-  exports.colors = colors;
-  
-  module.exports = {
-
-generateHTML: function (data) {
+function generateHTML(data) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -57,8 +52,7 @@ generateHTML: function (data) {
          height: 100%;
          }
          .wrapper {
-        background-color: green;
-     
+         background-color: ${colors[data.color].wrapperBackground};
          padding-top: 100px;
          }
          body {
@@ -100,10 +94,8 @@ generateHTML: function (data) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: green;
- 
-        color: green;
-
+         background-color: ${colors[data.color].headerBackground};
+         color: ${colors[data.color].headerColor};
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -114,8 +106,7 @@ generateHTML: function (data) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid green;
-  
+         border: 6px solid ${colors[data.color].photoBorderColor};
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -158,10 +149,8 @@ generateHTML: function (data) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: green;
-
-           color: green;
-
+           background-color: ${colors[data.color].headerBackground};
+           color: ${colors[data.color].headerColor};
            margin: 20px;
          }
          
@@ -184,4 +173,4 @@ generateHTML: function (data) {
       </style>`
         }
 
-      };
+        module.exports = generateHTML;
