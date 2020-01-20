@@ -280,7 +280,7 @@ function generateHTML(data) {
                     </h3>
                 </div>
                 <div class="card">
-                    <h3>GitHub Stars:<br>  ${data.following} 
+                    <h3>GitHub Stars:<br>  ${data.stars} 
                     </h3>
                 </div>
             </div>
